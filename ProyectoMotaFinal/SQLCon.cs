@@ -10,7 +10,7 @@ namespace ProyectoMotaFinal
 {
     internal class Datos
     {
-        String cadenaConexion = "Data Source= DONOLAP;" + "integrated security=true; initial catalog=AtaydeMusic; encrypt=false";
+        String cadenaConexion = "Data Source= DESKTOP-FQBTGPU;" + "integrated security=true; initial catalog=AtaydeMusic; encrypt=false";
         SqlConnection conexion;
 
         private SqlConnection AbrirConexion()
