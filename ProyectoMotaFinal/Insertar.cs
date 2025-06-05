@@ -20,24 +20,24 @@ namespace ProyectoMotaFinal
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
-            bool f = datos.command(
-                "INSERT INTO Instrumentos(nombre, tipo, marca, precio, stock) VALUES ('" +
-                txtNombre.Text + "', '" +
-                txtTipo.Text + "', '" +
-                txtMarca.Text + "', '" +
-                txtPrecio.Text + "', '" +
-                txtStock.Text + "');"
-            );
+            //Datos datos = new Datos();
+            //bool f = datos.command(
+            //    "INSERT INTO Instrumentos(nombre, tipo, marca, precio, stock) VALUES ('" +
+            //    txtNombre.Text + "', '" +
+            //    txtTipo.Text + "', '" +
+            //    txtMarca.Text + "', '" +
+            //    txtPrecio.Text + "', '" +
+            //    txtStock.Text + "');"
+            //);
 
-            if (f == true)
-            {
-                MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK);
-            }
-            else
-            {
-                MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK);
-            }
+            //if (f == true)
+            //{
+            //    MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK);
+            //}
         }
     }
 }
