@@ -38,17 +38,20 @@
             // dgvInventario
             // 
             dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInventario.Location = new Point(0, 44);
+            dgvInventario.Location = new Point(0, 59);
+            dgvInventario.Margin = new Padding(3, 4, 3, 4);
             dgvInventario.Name = "dgvInventario";
-            dgvInventario.Size = new Size(800, 406);
+            dgvInventario.RowHeadersWidth = 51;
+            dgvInventario.Size = new Size(914, 541);
             dgvInventario.TabIndex = 0;
             dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
             // btnInsertar
             // 
-            btnInsertar.Location = new Point(12, 12);
+            btnInsertar.Location = new Point(14, 16);
+            btnInsertar.Margin = new Padding(3, 4, 3, 4);
             btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(75, 23);
+            btnInsertar.Size = new Size(86, 31);
             btnInsertar.TabIndex = 1;
             btnInsertar.Text = "Insertar";
             btnInsertar.UseVisualStyleBackColor = true;
@@ -56,9 +59,10 @@
             // 
             // btnConfig
             // 
-            btnConfig.Location = new Point(689, 10);
+            btnConfig.Location = new Point(750, 13);
+            btnConfig.Margin = new Padding(3, 4, 3, 4);
             btnConfig.Name = "btnConfig";
-            btnConfig.Size = new Size(94, 23);
+            btnConfig.Size = new Size(133, 31);
             btnConfig.TabIndex = 2;
             btnConfig.Text = "Configuracion";
             btnConfig.UseVisualStyleBackColor = true;
@@ -66,9 +70,10 @@
             // 
             // btnConectar
             // 
-            btnConectar.Location = new Point(608, 10);
+            btnConectar.Location = new Point(658, 13);
+            btnConectar.Margin = new Padding(3, 4, 3, 4);
             btnConectar.Name = "btnConectar";
-            btnConectar.Size = new Size(75, 23);
+            btnConectar.Size = new Size(86, 31);
             btnConectar.TabIndex = 3;
             btnConectar.Text = "Conectar";
             btnConectar.UseVisualStyleBackColor = true;
@@ -76,13 +81,14 @@
             // 
             // Interfaz
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(btnConectar);
             Controls.Add(btnConfig);
             Controls.Add(btnInsertar);
             Controls.Add(dgvInventario);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Interfaz";
             Text = "Instrumentos";
             ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();

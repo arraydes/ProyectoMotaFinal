@@ -33,7 +33,7 @@ namespace ProyectoMotaFinal
                             dgvInventario.Invoke(() => dgvInventario.DataSource = tabla);
                             break;
 
-                        case "NOTIFICACION":
+                        case "NOTIFICACION":    
                             string texto = objeto["contenido"].ToString();
                             MessageBox.Show($"Notificación del servidor: {texto}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             break;
