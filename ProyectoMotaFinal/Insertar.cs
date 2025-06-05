@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ProyectoMotaFinal
@@ -18,26 +19,35 @@ namespace ProyectoMotaFinal
             InitializeComponent();
         }
 
-        private void btnInsertar_Click(object sender, EventArgs e)
+        private async void btnInsertar_Click(object sender, EventArgs e)
         {
-            //Datos datos = new Datos();
-            //bool f = datos.command(
-            //    "INSERT INTO Instrumentos(nombre, tipo, marca, precio, stock) VALUES ('" +
-            //    txtNombre.Text + "', '" +
-            //    txtTipo.Text + "', '" +
-            //    txtMarca.Text + "', '" +
-            //    txtPrecio.Text + "', '" +
-            //    txtStock.Text + "');"
-            //);
+   
+            try
+            {
+                var nuevoProducto = new
+                {
+                    evento = "INSERTAR",
+                    tabla = "Instrumentos", 
+                    valores = new
+                    {
+                        nombre = txtNombre.Text,
+                        tipo = txtTipo.Text,
+                        marca = txtMarca.Text,
+                        precio = Double.Parse(txtPrecio.Text),
+                        stock = Double.Parse(txtStock.Text)    
+                    }
+                };
 
-            //if (f == true)
-            //{
-            //    MessageBox.Show("Datos insertados", "Sistema", MessageBoxButtons.OK);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Error al insertar", "Sistema", MessageBoxButtons.OK);
-            //}
+                string json = JsonConvert.SerializeObject(nuevoProducto);
+                await WSCliente.Enviar(json);
+
+                MessageBox.Show("Producto insertado correctamente.");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar producto: " + ex.Message);
+            }
         }
     }
 }

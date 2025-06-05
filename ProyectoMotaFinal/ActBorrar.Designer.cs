@@ -40,6 +40,8 @@
             label2 = new Label();
             lbl1 = new Label();
             btnBorrar = new Button();
+            lblID = new Label();
+            txtID = new TextBox();
             SuspendLayout();
             // 
             // btnActualizar
@@ -51,6 +53,7 @@
             btnActualizar.TabIndex = 21;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // txtStock
             // 
@@ -91,6 +94,7 @@
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(114, 27);
             txtNombre.TabIndex = 16;
+            txtNombre.TextChanged += txtNombre_TextChanged;
             // 
             // label5
             // 
@@ -145,12 +149,32 @@
             btnBorrar.TabIndex = 22;
             btnBorrar.Text = "Borrar";
             btnBorrar.UseVisualStyleBackColor = true;
+            btnBorrar.Click += btnBorrar_Click;
+            // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Location = new Point(436, 161);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(24, 20);
+            lblID.TabIndex = 23;
+            lblID.Text = "ID";
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(390, 197);
+            txtID.Name = "txtID";
+            txtID.ReadOnly = true;
+            txtID.Size = new Size(125, 27);
+            txtID.TabIndex = 24;
             // 
             // ActBorrar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(610, 359);
+            Controls.Add(txtID);
+            Controls.Add(lblID);
             Controls.Add(btnBorrar);
             Controls.Add(btnActualizar);
             Controls.Add(txtStock);
@@ -165,6 +189,7 @@
             Controls.Add(lbl1);
             Name = "ActBorrar";
             Text = "ActBorrar";
+            Load += ActBorrar_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,5 +208,7 @@
         private Label label2;
         private Label lbl1;
         private Button btnBorrar;
+        private Label lblID;
+        private TextBox txtID;
     }
 }

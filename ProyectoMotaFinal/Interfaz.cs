@@ -94,15 +94,15 @@ namespace ProyectoMotaFinal
                 WSCliente.AlRecibirMensaje += ProcesarMensajeDelServidor;
 
                 // Enviar credenciales de autenticación
-                var authPayload = new
-                {
-                    evento = "AUTENTICAR",
-                    usuario = Config.Usuario,
-                    contrasena = Config.Contrasena
-                };
+                //var authPayload = new
+                //{
+                //    evento = "AUTENTICAR",
+                //    usuario = Config.Usuario,
+                //    contrasena = Config.Contrasena
+                //};
 
-                string authJson = JsonConvert.SerializeObject(authPayload);
-                await WSCliente.Enviar(authJson);
+                //string authJson = JsonConvert.SerializeObject(authPayload);
+                //await WSCliente.Enviar(authJson);
 
                 // Una vez autenticado, pides los datos
                 await WSCliente.Enviar("{\"evento\": \"GET_INSTRUMENTOS\"}");
@@ -115,7 +115,14 @@ namespace ProyectoMotaFinal
 
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ActBorrar ventanaActBorrar = new ActBorrar();
+            ActBorrar ventanaActBorrar = new ActBorrar(
+                Convert.ToInt32(dgvInventario.Rows[e.RowIndex].Cells[0].Value),
+                dgvInventario.Rows[e.RowIndex].Cells[1].Value.ToString(),
+                dgvInventario.Rows[e.RowIndex].Cells[2].Value.ToString(),
+                dgvInventario.Rows[e.RowIndex].Cells[3].Value.ToString(),
+                Convert.ToDouble(dgvInventario.Rows[e.RowIndex].Cells[4].Value),
+                Convert.ToInt32(dgvInventario.Rows[e.RowIndex].Cells[5].Value));
+
             ventanaActBorrar.Show();
         }
     }
