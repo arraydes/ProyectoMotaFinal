@@ -55,12 +55,12 @@ namespace ProyectoMotaFinal
                 string json = JsonConvert.SerializeObject(payload);
                 await WSCliente.Enviar(json);
 
-                MessageBox.Show("Producto actualizado correctamente.");
+                //MessageBox.Show("Producto actualizado correctamente.");
                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al actualizar: " + ex.Message);
+                //MessageBox.Show("Error al actualizar: " + ex.Message);
             }
         }
 
@@ -87,12 +87,12 @@ namespace ProyectoMotaFinal
                     string json = JsonConvert.SerializeObject(payload);
                     await WSCliente.Enviar(json);
 
-                    MessageBox.Show("Producto eliminado correctamente.");
+                    //MessageBox.Show("Producto eliminado correctamente.");
                     this.Close();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al eliminar: " + ex.Message);
+                    //MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
             }
 

@@ -41,7 +41,7 @@ namespace ProyectoMotaFinal
                 string json = JsonConvert.SerializeObject(nuevoProducto);
                 await WSCliente.Enviar(json);
 
-                MessageBox.Show("Producto insertado correctamente.");
+                //MessageBox.Show("Producto insertado correctamente.");
                 this.Close();
             }
             catch (Exception ex)

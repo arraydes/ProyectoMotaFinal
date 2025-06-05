@@ -36,6 +36,8 @@ namespace ProyectoMotaFinal
                         case "NOTIFICACION":    
                             string texto = objeto["contenido"].ToString();
                             MessageBox.Show($"Notificación del servidor: {texto}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            btnConectar.PerformClick();
+
                             break;
 
                         //case "AUTENTICACION_EXITOSA":
