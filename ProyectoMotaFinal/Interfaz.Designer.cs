@@ -31,11 +31,12 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interfaz));
             dgvInventario = new DataGridView();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            actualizarToolStripMenuItem = new ToolStripMenuItem();
             btnInsertar = new Button();
             btnConfig = new Button();
             btnConectar = new Button();
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            actualizarToolStripMenuItem = new ToolStripMenuItem();
+            BtnDesconectar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvInventario).BeginInit();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
@@ -50,6 +51,20 @@
             dgvInventario.Size = new Size(800, 406);
             dgvInventario.TabIndex = 0;
             dgvInventario.CellContentClick += dgvInventario_CellContentClick;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { actualizarToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(147, 28);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            actualizarToolStripMenuItem.Font = new Font("Microsoft New Tai Lue", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            actualizarToolStripMenuItem.Size = new Size(146, 24);
+            actualizarToolStripMenuItem.Text = "Actualizar";
+            actualizarToolStripMenuItem.Click += actualizarToolStripMenuItem_Click;
             // 
             // btnInsertar
             // 
@@ -68,7 +83,7 @@
             // 
             btnConfig.BackColor = SystemColors.ControlDark;
             btnConfig.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            btnConfig.Location = new Point(627, 10);
+            btnConfig.Location = new Point(643, 8);
             btnConfig.Name = "btnConfig";
             btnConfig.Size = new Size(145, 28);
             btnConfig.TabIndex = 2;
@@ -79,7 +94,7 @@
             // btnConectar
             // 
             btnConectar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            btnConectar.Location = new Point(508, 10);
+            btnConectar.Location = new Point(391, 8);
             btnConectar.Name = "btnConectar";
             btnConectar.Size = new Size(100, 26);
             btnConectar.TabIndex = 3;
@@ -87,25 +102,24 @@
             btnConectar.UseVisualStyleBackColor = true;
             btnConectar.Click += btnConectar_Click;
             // 
-            // contextMenuStrip1
+            // BtnDesconectar
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { actualizarToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(147, 28);
-            // 
-            // actualizarToolStripMenuItem
-            // 
-            actualizarToolStripMenuItem.Font = new Font("Microsoft New Tai Lue", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            actualizarToolStripMenuItem.Size = new Size(146, 24);
-            actualizarToolStripMenuItem.Text = "Actualizar";
-            actualizarToolStripMenuItem.Click += actualizarToolStripMenuItem_Click;
+            BtnDesconectar.BackColor = SystemColors.GradientActiveCaption;
+            BtnDesconectar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnDesconectar.Location = new Point(497, 8);
+            BtnDesconectar.Name = "BtnDesconectar";
+            BtnDesconectar.Size = new Size(127, 28);
+            BtnDesconectar.TabIndex = 4;
+            BtnDesconectar.Text = "Desconectar";
+            BtnDesconectar.UseVisualStyleBackColor = false;
+            BtnDesconectar.Click += button1_Click;
             // 
             // Interfaz
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnDesconectar);
             Controls.Add(btnConectar);
             Controls.Add(btnConfig);
             Controls.Add(btnInsertar);
@@ -126,5 +140,6 @@
         private Button btnConectar;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem actualizarToolStripMenuItem;
+        private Button BtnDesconectar;
     }
 }

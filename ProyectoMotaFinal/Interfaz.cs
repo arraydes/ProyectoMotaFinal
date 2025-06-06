@@ -143,9 +143,12 @@ namespace ProyectoMotaFinal
             ventanaActBorrar.Show();
         }
 
-        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            WSCliente.DesconectarWebSocketAsync();
 
+            //Para que la tabla se vacíe
+            dgvInventario.DataSource = null;
         }
     }
 }

@@ -27,16 +27,6 @@ namespace ProyectoMotaFinal
 
         private static async Task EscucharMensajes()
         {
-            /*var buffer = new byte[4096];
-
-            while (socket.State == WebSocketState.Open)
-            {
-                var result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), cts.Token);
-                if (result.MessageType == WebSocketMessageType.Close) break;
-
-                string mensaje = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                AlRecibirMensaje?.Invoke(mensaje);
-            }*/
             var buffer = new byte[4096];
 
             while (socket.State == WebSocketState.Open)
@@ -74,8 +64,30 @@ namespace ProyectoMotaFinal
             await socket.SendAsync(new ArraySegment<byte>(bytes), WebSocketMessageType.Text, true, cts.Token);
         }
 
-        public static bool EstaConectado(){
-            if(socket.State == WebSocketState.Open) { return true; } else { return false; };
+        public static async Task DesconectarWebSocketAsync()
+        {
+            try
+            {
+                if (socket != null && socket.State == WebSocketState.Open)
+                {
+                    await socket.CloseAsync(
+                        WebSocketCloseStatus.NormalClosure,
+                        "Cierre solicitado por el cliente",
+                        CancellationToken.None
+                    );
+
+                    MessageBox.Show("Desconectado del servidor WebSocket.", "Desconexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ya estás desconectado.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al desconectar: " + ex.Message);
+            }
         }
+
     }
 }
