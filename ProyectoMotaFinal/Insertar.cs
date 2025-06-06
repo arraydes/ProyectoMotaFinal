@@ -21,20 +21,20 @@ namespace ProyectoMotaFinal
 
         private async void btnInsertar_Click(object sender, EventArgs e)
         {
-   
+
             try
             {
                 var nuevoProducto = new
                 {
                     evento = "INSERTAR",
-                    tabla = "Instrumentos", 
+                    tabla = "Instrumentos",
                     valores = new
                     {
                         nombre = txtNombre.Text,
                         tipo = txtTipo.Text,
                         marca = txtMarca.Text,
                         precio = Double.Parse(txtPrecio.Text),
-                        stock = Double.Parse(txtStock.Text)    
+                        stock = Double.Parse(txtStock.Text)
                     }
                 };
 
@@ -48,6 +48,16 @@ namespace ProyectoMotaFinal
             {
                 MessageBox.Show("Error al insertar producto: " + ex.Message);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Insertar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

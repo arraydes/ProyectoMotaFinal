@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interfaz));
             dgvInventario = new DataGridView();
             btnInsertar = new Button();
             btnConfig = new Button();
@@ -48,32 +49,38 @@
             // 
             // btnInsertar
             // 
+            btnInsertar.BackColor = Color.Goldenrod;
+            btnInsertar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
+            btnInsertar.ForeColor = Color.PaleGoldenrod;
             btnInsertar.Location = new Point(14, 16);
             btnInsertar.Margin = new Padding(3, 4, 3, 4);
             btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(86, 31);
+            btnInsertar.Size = new Size(104, 31);
             btnInsertar.TabIndex = 1;
             btnInsertar.Text = "Insertar";
-            btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.UseVisualStyleBackColor = false;
             btnInsertar.Click += btnInsertar_Click;
             // 
             // btnConfig
             // 
-            btnConfig.Location = new Point(750, 13);
+            btnConfig.BackColor = SystemColors.ControlDark;
+            btnConfig.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
+            btnConfig.Location = new Point(717, 13);
             btnConfig.Margin = new Padding(3, 4, 3, 4);
             btnConfig.Name = "btnConfig";
-            btnConfig.Size = new Size(133, 31);
+            btnConfig.Size = new Size(166, 34);
             btnConfig.TabIndex = 2;
-            btnConfig.Text = "Configuracion";
-            btnConfig.UseVisualStyleBackColor = true;
+            btnConfig.Text = "Configuración";
+            btnConfig.UseVisualStyleBackColor = false;
             btnConfig.Click += btnConfig_Click;
             // 
             // btnConectar
             // 
-            btnConectar.Location = new Point(658, 13);
+            btnConectar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
+            btnConectar.Location = new Point(581, 13);
             btnConectar.Margin = new Padding(3, 4, 3, 4);
             btnConectar.Name = "btnConectar";
-            btnConectar.Size = new Size(86, 31);
+            btnConectar.Size = new Size(114, 34);
             btnConectar.TabIndex = 3;
             btnConectar.Text = "Conectar";
             btnConectar.UseVisualStyleBackColor = true;
@@ -88,6 +95,7 @@
             Controls.Add(btnConfig);
             Controls.Add(btnInsertar);
             Controls.Add(dgvInventario);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 4, 3, 4);
             Name = "Interfaz";
             Text = "Instrumentos";

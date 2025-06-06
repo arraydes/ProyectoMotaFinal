@@ -28,7 +28,7 @@ namespace ProyectoMotaFinal
 
         private async void ActBorrar_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -95,6 +95,11 @@ namespace ProyectoMotaFinal
                     //MessageBox.Show("Error al eliminar: " + ex.Message);
                 }
             }
+
+        }
+
+        private void lblID_Click(object sender, EventArgs e)
+        {
 
         }
     }
