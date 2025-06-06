@@ -27,16 +27,6 @@ namespace ProyectoMotaFinal
 
         private static async Task EscucharMensajes()
         {
-            /*var buffer = new byte[4096];
-
-            while (socket.State == WebSocketState.Open)
-            {
-                var result = await socket.ReceiveAsync(new ArraySegment<byte>(buffer), cts.Token);
-                if (result.MessageType == WebSocketMessageType.Close) break;
-
-                string mensaje = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                AlRecibirMensaje?.Invoke(mensaje);
-            }*/
             var buffer = new byte[4096];
 
             while (socket.State == WebSocketState.Open)

@@ -12,7 +12,7 @@ namespace ProyectoMotaFinal
             InitializeComponent();
         }
 
-        private void ProcesarMensajeDelServidor(string mensaje)
+        private async void ProcesarMensajeDelServidor(string mensaje)
         {
             // Solo procesa si el mensaje es una lista JSON
             try
@@ -36,7 +36,7 @@ namespace ProyectoMotaFinal
                         case "NOTIFICACION":    
                             string texto = objeto["contenido"].ToString();
                             MessageBox.Show($"Notificación del servidor: {texto}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            btnConectar.PerformClick();
+                            await WSCliente.Enviar("{\"evento\": \"GET_INSTRUMENTOS\"}");
 
                             break;
 
