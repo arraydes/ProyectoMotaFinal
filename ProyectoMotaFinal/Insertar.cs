@@ -34,7 +34,7 @@ namespace ProyectoMotaFinal
                         tipo = txtTipo.Text,
                         marca = txtMarca.Text,
                         precio = Double.Parse(txtPrecio.Text),
-                        stock = Double.Parse(txtStock.Text)
+                        stock = Convert.ToInt32(TrkStock.Value)
                     }
                 };
 
@@ -58,6 +58,11 @@ namespace ProyectoMotaFinal
         private void Insertar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void TrkStock_Scroll(object sender, EventArgs e)
+        {
+            LblStock.Text = TrkStock.Value.ToString();
         }
     }
 }

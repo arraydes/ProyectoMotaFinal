@@ -38,19 +38,23 @@
             txtTipo = new TextBox();
             txtMarca = new TextBox();
             txtPrecio = new TextBox();
-            txtStock = new TextBox();
             btnInsertar = new Button();
             pictureBox1 = new PictureBox();
+            label6 = new Label();
+            label1 = new Label();
+            LblStock = new Label();
+            TrkStock = new TrackBar();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TrkStock).BeginInit();
             SuspendLayout();
             // 
             // lbl1
             // 
             lbl1.AutoSize = true;
             lbl1.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            lbl1.Location = new Point(321, 77);
+            lbl1.Location = new Point(281, 58);
             lbl1.Name = "lbl1";
-            lbl1.Size = new Size(89, 27);
+            lbl1.Size = new Size(73, 21);
             lbl1.TabIndex = 0;
             lbl1.Text = "Nombre";
             // 
@@ -58,9 +62,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            label2.Location = new Point(346, 188);
+            label2.Location = new Point(303, 141);
             label2.Name = "label2";
-            label2.Size = new Size(54, 27);
+            label2.Size = new Size(44, 21);
             label2.TabIndex = 1;
             label2.Text = "Tipo";
             // 
@@ -68,9 +72,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            label3.Location = new Point(335, 130);
+            label3.Location = new Point(293, 98);
             label3.Name = "label3";
-            label3.Size = new Size(71, 27);
+            label3.Size = new Size(57, 21);
             label3.TabIndex = 2;
             label3.Text = "Marca";
             // 
@@ -78,9 +82,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            label4.Location = new Point(335, 312);
+            label4.Location = new Point(293, 234);
             label4.Name = "label4";
-            label4.Size = new Size(71, 27);
+            label4.Size = new Size(58, 21);
             label4.TabIndex = 3;
             label4.Text = "Precio";
             // 
@@ -88,66 +92,52 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            label5.Location = new Point(340, 246);
+            label5.Location = new Point(298, 184);
             label5.Name = "label5";
-            label5.Size = new Size(64, 27);
+            label5.Size = new Size(52, 21);
             label5.TabIndex = 4;
             label5.Text = "Stock";
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Microsoft New Tai Lue", 12F);
-            txtNombre.Location = new Point(411, 70);
-            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Location = new Point(360, 52);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(159, 34);
+            txtNombre.Size = new Size(140, 28);
             txtNombre.TabIndex = 5;
             // 
             // txtTipo
             // 
             txtTipo.Font = new Font("Microsoft New Tai Lue", 12F);
-            txtTipo.Location = new Point(411, 188);
-            txtTipo.Margin = new Padding(3, 4, 3, 4);
+            txtTipo.Location = new Point(360, 141);
             txtTipo.Name = "txtTipo";
-            txtTipo.Size = new Size(159, 34);
+            txtTipo.Size = new Size(140, 28);
             txtTipo.TabIndex = 6;
             // 
             // txtMarca
             // 
             txtMarca.Font = new Font("Microsoft New Tai Lue", 12F);
-            txtMarca.Location = new Point(411, 130);
-            txtMarca.Margin = new Padding(3, 4, 3, 4);
+            txtMarca.Location = new Point(360, 98);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(159, 34);
+            txtMarca.Size = new Size(140, 28);
             txtMarca.TabIndex = 7;
             // 
             // txtPrecio
             // 
             txtPrecio.Font = new Font("Microsoft New Tai Lue", 12F);
-            txtPrecio.Location = new Point(411, 312);
-            txtPrecio.Margin = new Padding(3, 4, 3, 4);
+            txtPrecio.Location = new Point(360, 234);
             txtPrecio.Name = "txtPrecio";
-            txtPrecio.Size = new Size(159, 34);
+            txtPrecio.Size = new Size(140, 28);
             txtPrecio.TabIndex = 8;
-            // 
-            // txtStock
-            // 
-            txtStock.Font = new Font("Microsoft New Tai Lue", 12F);
-            txtStock.Location = new Point(411, 246);
-            txtStock.Margin = new Padding(3, 4, 3, 4);
-            txtStock.Name = "txtStock";
-            txtStock.Size = new Size(159, 34);
-            txtStock.TabIndex = 9;
             // 
             // btnInsertar
             // 
             btnInsertar.BackColor = Color.Goldenrod;
             btnInsertar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
             btnInsertar.ForeColor = Color.PaleGoldenrod;
-            btnInsertar.Location = new Point(401, 408);
-            btnInsertar.Margin = new Padding(3, 4, 3, 4);
+            btnInsertar.Location = new Point(351, 306);
             btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(118, 35);
+            btnInsertar.Size = new Size(103, 26);
             btnInsertar.TabIndex = 10;
             btnInsertar.Text = "Insertar";
             btnInsertar.UseVisualStyleBackColor = false;
@@ -156,21 +146,64 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, -3);
+            pictureBox1.Location = new Point(12, -2);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(301, 459);
+            pictureBox1.Size = new Size(263, 344);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(449, 208);
+            label6.Name = "label6";
+            label6.Size = new Size(19, 15);
+            label6.TabIndex = 33;
+            label6.Text = "25";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(367, 206);
+            label1.Name = "label1";
+            label1.Size = new Size(13, 15);
+            label1.TabIndex = 32;
+            label1.Text = "1";
+            // 
+            // LblStock
+            // 
+            LblStock.AutoSize = true;
+            LblStock.Font = new Font("Microsoft New Tai Lue", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblStock.Location = new Point(467, 189);
+            LblStock.Name = "LblStock";
+            LblStock.Size = new Size(21, 20);
+            LblStock.TabIndex = 31;
+            LblStock.Text = "...";
+            // 
+            // TrkStock
+            // 
+            TrkStock.Location = new Point(360, 183);
+            TrkStock.Maximum = 25;
+            TrkStock.Minimum = 1;
+            TrkStock.Name = "TrkStock";
+            TrkStock.Size = new Size(110, 45);
+            TrkStock.TabIndex = 30;
+            TrkStock.Value = 1;
+            TrkStock.Scroll += TrkStock_Scroll;
+            // 
             // Insertar
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(599, 469);
+            ClientSize = new Size(524, 352);
+            Controls.Add(label6);
+            Controls.Add(label1);
+            Controls.Add(LblStock);
+            Controls.Add(TrkStock);
             Controls.Add(pictureBox1);
             Controls.Add(btnInsertar);
-            Controls.Add(txtStock);
             Controls.Add(txtPrecio);
             Controls.Add(txtMarca);
             Controls.Add(txtTipo);
@@ -181,11 +214,11 @@
             Controls.Add(label2);
             Controls.Add(lbl1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Insertar";
             Text = "Insertar";
             Load += Insertar_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TrkStock).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,8 +234,11 @@
         private TextBox txtTipo;
         private TextBox txtMarca;
         private TextBox txtPrecio;
-        private TextBox txtStock;
         private Button btnInsertar;
         private PictureBox pictureBox1;
+        private Label label6;
+        private Label label1;
+        private Label LblStock;
+        private TrackBar TrkStock;
     }
 }

@@ -12,7 +12,7 @@ namespace ProyectoMotaFinal
             InitializeComponent();
         }
 
-        private void ProcesarMensajeDelServidor(string mensaje)
+        private async void ProcesarMensajeDelServidor(string mensaje)
         {
             // Solo procesa si el mensaje es una lista JSON
             try
@@ -33,10 +33,10 @@ namespace ProyectoMotaFinal
                             dgvInventario.Invoke(() => dgvInventario.DataSource = tabla);
                             break;
 
-                        case "NOTIFICACION":    
+                        case "NOTIFICACION":
                             string texto = objeto["contenido"].ToString();
                             MessageBox.Show($"Notificación del servidor: {texto}", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            btnConectar.PerformClick();
+                            await WSCliente.Enviar("{\"evento\": \"GET_INSTRUMENTOS\"}");
 
                             break;
 
@@ -115,17 +115,37 @@ namespace ProyectoMotaFinal
             }
         }
 
+        // Se descontinua su función porque no siempre se llama al DataGridCellEvent
         private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //ActBorrar ventanaActBorrar = new ActBorrar(
+            //    Convert.ToInt32(dgvInventario.Rows[e.RowIndex].Cells[0].Value),
+            //    dgvInventario.Rows[e.RowIndex].Cells[1].Value.ToString(),
+            //    dgvInventario.Rows[e.RowIndex].Cells[2].Value.ToString(),
+            //    dgvInventario.Rows[e.RowIndex].Cells[3].Value.ToString(),
+            //    Convert.ToDouble(dgvInventario.Rows[e.RowIndex].Cells[4].Value),
+            //    Convert.ToInt32(dgvInventario.Rows[e.RowIndex].Cells[5].Value));
+
+            //ventanaActBorrar.Show();
+        }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int i = dgvInventario.CurrentRow.Index;
             ActBorrar ventanaActBorrar = new ActBorrar(
-                Convert.ToInt32(dgvInventario.Rows[e.RowIndex].Cells[0].Value),
-                dgvInventario.Rows[e.RowIndex].Cells[1].Value.ToString(),
-                dgvInventario.Rows[e.RowIndex].Cells[2].Value.ToString(),
-                dgvInventario.Rows[e.RowIndex].Cells[3].Value.ToString(),
-                Convert.ToDouble(dgvInventario.Rows[e.RowIndex].Cells[4].Value),
-                Convert.ToInt32(dgvInventario.Rows[e.RowIndex].Cells[5].Value));
+                Convert.ToInt32(dgvInventario.Rows[i].Cells[0].Value),
+                dgvInventario.Rows[i].Cells[1].Value.ToString(),
+                dgvInventario.Rows[i].Cells[2].Value.ToString(),
+                dgvInventario.Rows[i].Cells[3].Value.ToString(),
+                Convert.ToDouble(dgvInventario.Rows[i].Cells[4].Value),
+                Convert.ToInt32(dgvInventario.Rows[i].Cells[5].Value));
 
             ventanaActBorrar.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

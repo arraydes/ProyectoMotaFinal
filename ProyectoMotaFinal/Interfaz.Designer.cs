@@ -28,22 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interfaz));
             dgvInventario = new DataGridView();
             btnInsertar = new Button();
             btnConfig = new Button();
             btnConectar = new Button();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            actualizarToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvInventario).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvInventario
             // 
             dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInventario.Location = new Point(0, 59);
-            dgvInventario.Margin = new Padding(3, 4, 3, 4);
+            dgvInventario.ContextMenuStrip = contextMenuStrip1;
+            dgvInventario.Location = new Point(0, 44);
             dgvInventario.Name = "dgvInventario";
             dgvInventario.RowHeadersWidth = 51;
-            dgvInventario.Size = new Size(914, 541);
+            dgvInventario.Size = new Size(800, 406);
             dgvInventario.TabIndex = 0;
             dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
@@ -52,10 +56,9 @@
             btnInsertar.BackColor = Color.Goldenrod;
             btnInsertar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
             btnInsertar.ForeColor = Color.PaleGoldenrod;
-            btnInsertar.Location = new Point(14, 16);
-            btnInsertar.Margin = new Padding(3, 4, 3, 4);
+            btnInsertar.Location = new Point(12, 12);
             btnInsertar.Name = "btnInsertar";
-            btnInsertar.Size = new Size(104, 31);
+            btnInsertar.Size = new Size(91, 26);
             btnInsertar.TabIndex = 1;
             btnInsertar.Text = "Insertar";
             btnInsertar.UseVisualStyleBackColor = false;
@@ -65,10 +68,9 @@
             // 
             btnConfig.BackColor = SystemColors.ControlDark;
             btnConfig.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            btnConfig.Location = new Point(717, 13);
-            btnConfig.Margin = new Padding(3, 4, 3, 4);
+            btnConfig.Location = new Point(627, 10);
             btnConfig.Name = "btnConfig";
-            btnConfig.Size = new Size(166, 34);
+            btnConfig.Size = new Size(145, 28);
             btnConfig.TabIndex = 2;
             btnConfig.Text = "Configuración";
             btnConfig.UseVisualStyleBackColor = false;
@@ -77,29 +79,42 @@
             // btnConectar
             // 
             btnConectar.Font = new Font("Microsoft New Tai Lue", 12F, FontStyle.Bold);
-            btnConectar.Location = new Point(581, 13);
-            btnConectar.Margin = new Padding(3, 4, 3, 4);
+            btnConectar.Location = new Point(508, 10);
             btnConectar.Name = "btnConectar";
-            btnConectar.Size = new Size(114, 34);
+            btnConectar.Size = new Size(100, 26);
             btnConectar.TabIndex = 3;
             btnConectar.Text = "Conectar";
             btnConectar.UseVisualStyleBackColor = true;
             btnConectar.Click += btnConectar_Click;
             // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { actualizarToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(147, 28);
+            // 
+            // actualizarToolStripMenuItem
+            // 
+            actualizarToolStripMenuItem.Font = new Font("Microsoft New Tai Lue", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
+            actualizarToolStripMenuItem.Size = new Size(146, 24);
+            actualizarToolStripMenuItem.Text = "Actualizar";
+            actualizarToolStripMenuItem.Click += actualizarToolStripMenuItem_Click;
+            // 
             // Interfaz
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(btnConectar);
             Controls.Add(btnConfig);
             Controls.Add(btnInsertar);
             Controls.Add(dgvInventario);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
             Name = "Interfaz";
             Text = "Instrumentos";
             ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -109,5 +124,7 @@
         private Button btnInsertar;
         private Button btnConfig;
         private Button btnConectar;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem actualizarToolStripMenuItem;
     }
 }

@@ -23,7 +23,8 @@ namespace ProyectoMotaFinal
             txtTipo.Text = tipo;
             txtMarca.Text = marca;
             txtPrecio.Text = precio.ToString();
-            txtStock.Text = stock.ToString();
+            TrkStock.Value = stock;
+            LblStock.Text = stock.ToString(); 
         }
 
         private async void ActBorrar_Load(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace ProyectoMotaFinal
                         tipo = txtTipo.Text,
                         marca = txtMarca.Text,
                         precio = decimal.Parse(txtPrecio.Text),
-                        stock = decimal.Parse(txtStock.Text)
+                        stock = Convert.ToInt32(TrkStock.Value)
                     }
                 };
 
@@ -101,6 +102,11 @@ namespace ProyectoMotaFinal
         private void lblID_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TrkStock_Scroll(object sender, EventArgs e)
+        {
+            LblStock.Text = TrkStock.Value.ToString();
         }
     }
 }
